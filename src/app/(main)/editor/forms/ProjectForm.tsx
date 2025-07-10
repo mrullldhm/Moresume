@@ -1,7 +1,7 @@
 import { EditorFormProps } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFieldArray, useForm, UseFormReturn } from "react-hook-form";
-import { projectSchema, ProjectValues } from "@/lib/validation";
+import { projectSchema, ProjectValues } from "@/lib/validation"
 import { useEffect } from "react";
 import { GripHorizontal } from "lucide-react";
 import {

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { generalInfoSchema, GeneralInfoValues } from "@/lib/validation";
+import { generalInfoSchema, GeneralInfoValues } from "@/lib/validation"
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
