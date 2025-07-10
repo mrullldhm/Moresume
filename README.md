@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Moresume
 
-## Getting Started
+## About
+Moresume is an easy-to-use resume builder that helps you create professional resumes quickly. Built with PostgreSQL, Express, React, and Node.js (PERN stack) using TypeScript, it includes smart AI features and a mobile-friendly design.
 
-First, run the development server:
+## Features
+- **Step-by-Step Form**: Create resumes with a simple, guided form using `react-hook-form`.
+- **Flexible Sections**: Add, edit, or delete resume parts easily with `useFieldArray`.
+- **Drag-and-Drop**: Move sections around with `@dnd-kit/core`, `@dnd-kit/sortable`, and `@dnd-kit/modifiers`.
+- **AI Content**: Get resume text suggestions from OpenAI.
+- **Paid Plans**: Unlock extra features with subscription tiers via Stripe.
+- **Mobile-Friendly**: Looks great on phones and desktops with Tailwind CSS and Shadcn UI.
+- **PDF Download**: Save or print resumes as PDFs with `react-to-print`.
+- **URL Saving**: Keep your progress in the browser URL for easy sharing.
+- **Data Storage**: Save resumes securely in PostgreSQL and files to Vercel Blob.
+- **Auto-Save**: Your work saves automatically to avoid losing changes.
+- **Login System**: Secure accounts with Clerk (`@clerk/nextjs`, `@clerk/themes`).
+
+## Setup
+To run Moresume on your computer:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Get the code
+git clone https://github.com/mrullldhm/Moresume.git
+cd Moresume
+
+# Install frontend tools
+cd client
+npm install --legacy-peer-deps
+
+# Install backend tools
+cd ../server
+npm install --legacy-peer-deps
+
+# Set up environment file
+cp .env.example .env
+# Add your PostgreSQL database URL and other keys to .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What You Need
+- Node.js (version 18 or newer)
+- PostgreSQL (version 15 or newer)
+- npm (version 9 or newer)
+- Vercel account for file storage
+- Clerk account for user login
+- OpenAI key for AI features
+- Stripe account for payments
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use
+1. Start the backend:
+```bash
+cd server
+npm start
+```
+2. Start the frontend:
+```bash
+cd client
+npm run dev
+```
+3. Open `http://localhost:5173` in your browser.
+4. Sign up with Clerk, build your resume, and try features like AI suggestions or PDF download.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
+Add these to `.env` files in `server/` and `client/` folders:
 
-## Learn More
+```bash
+# Server .env
+DATABASE_URL=postgresql://user:password@localhost:5432/Moresume
+PORT=5000
+CLERK_SECRET_KEY=your_clerk_secret_key
+OPENAI_API_KEY=your_openai_api_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+VERCEL_BLOB_TOKEN=your_vercel_blob_token
 
-To learn more about Next.js, take a look at the following resources:
+# Client .env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set up the database:
+```bash
+cd server
+npx prisma migrate dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
+Want to help? Here’s how:
+1. Fork the repository.
+2. Make a new branch (`git checkout -b feature-branch`).
+3. Save your changes (`git commit -m 'Add feature'`).
+4. Push your branch (`git push origin feature-branch`).
+5. Submit a pull request.
 
-## Deploy on Vercel
+Use TypeScript, ESLint, and Prettier for clean code.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
+This project uses the MIT License. Check the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+For help or feedback:
+- GitHub Issues: [https://github.com/mrullldhm/Moresume/issues](https://github.com/mrullldhm/Moresume/issues)
+- Twitter: [https://x.com/mrullldhm](https://x.com/mrullldhm)
+- LinkedIn: [https://www.linkedin.com/in/mrullldhm/](https://www.linkedin.com/in/mrullldhm/)
