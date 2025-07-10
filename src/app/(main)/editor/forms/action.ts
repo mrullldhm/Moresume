@@ -2,7 +2,7 @@
 
 import openai from "@/lib/openai";
 import { canUseAITools } from "@/lib/permission";
-import { getUserSubscriptionLevel } from "@/lib/subscription"
+import { getUserSubscriptionLevel } from "@/lib/subscription";
 import {
   GenerateSummaryInput,
   generateSummarySchema,
