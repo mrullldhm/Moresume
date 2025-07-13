@@ -1,4 +1,5 @@
 # Moresume
+![Homepage screenshot](/src/assets/screenshot.png)
 
 ## About
 Moresume is an easy-to-use resume builder that helps you create professional resumes quickly. Built with PostgreSQL, Express, React, and Node.js (PERN stack) using TypeScript, it includes smart AI features and a mobile-friendly design.
